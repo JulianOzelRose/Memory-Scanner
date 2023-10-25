@@ -33,7 +33,8 @@ from an .exe, you must factor in the module base address. You must also pass in 
 
 All you need is the process ID, and the Windows header, which can be included by using the ```#include <Windows.h>``` preprocessor directive.
 For the string value function, you can modify ```MAX_STRING_LENGTH``` to your desired string length. The extra byte added to the string
-size is to account for the null terminator.
+size is to account for the null terminator. For a failed read, you can pull the error code by using ```GetLastError()```, which returns
+a numeric error code.
 
 #### Byte value
 ```
@@ -204,3 +205,4 @@ void WriteStringToMemory(HANDLE hProc, BYTE* cbAddress, const char* cNewString)
 - [Microsoft Learn - WriteProcessMemory function (memoryapi.h)](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-writeprocessmemory)
 - [Microsoft Learn - EnumProcessModules function (psapi.h)](https://learn.microsoft.com/en-us/windows/win32/api/psapi/nf-psapi-enumprocessmodules)
 - [Microsoft Learn - Process Security and Access Rights](https://learn.microsoft.com/en-us/windows/win32/procthread/process-security-and-access-rights)
+- [Microsoft Learn - GetLastError function (errhandlingapi.h)](https://learn.microsoft.com/en-us/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror)
