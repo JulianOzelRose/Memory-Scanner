@@ -1,7 +1,9 @@
 # Memory Scanner
 This program is an x86/x64-based memory scanner. It can search for and modify bytes, integers, and strings.
 It is essentially a clone of Cheat Engine. This scanner allows the user to search memory addresses for
-values, and then save those values. Once a memory value is saved, you can change its data type, add a description,
+values, and then save those values.
+
+Once a memory value is saved, you can change its data type, add a description,
 change its address, and more. To run the program, navigate to the proper release folder for your target binary (x86/x64),
 then download ```Memory-Scanner.exe```, then open it. Upon opening the scanner, it will prompt you for administrative
 privileges -- which is required for the memory scanning functions to work properly.
@@ -17,7 +19,9 @@ privileges -- which is required for the memory scanning functions to work proper
 - Windows API
 
 ## Program screenshots
+#### UI after search completed
 ![Memory-Scanner-Sample-1](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/3254909a-fd89-4472-a5af-a9123c2d19c4)
+#### UI when changing an address
 ![Memory-Scanner-Sample-3](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/201fa3da-970e-42fc-9b87-4475acdd6d1b)
 
 ## Memory read functions
@@ -126,9 +130,10 @@ However, for writing to strings, the declaration is slightly different:<br>
 
 ```HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, dwProcessId);```<br>
 
-Also, note that you can easily change the encoding from UTF-8 to UTF-16. Since these functions are written for
-Visual C++ WinForms, a failed write will launch a message box that will specify the error code. This format can
-be easily changed to work on a CLI-based application.
+You also need to factor in the module base address when passing in the address. Also, note that you can easily
+change the encoding from UTF-8 to UTF-16. Since these functions are written for Visual C++ WinForms, a failed
+write will launch a message box that will specify the error code. This format can be easily changed to work on
+a CLI-based application.
 
 #### Byte value
 ```
