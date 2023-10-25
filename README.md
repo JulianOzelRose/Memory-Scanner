@@ -19,11 +19,12 @@ privileges -- which is required for the memory scanning functions to work proper
 - Windows API
 
 ## Program screenshots
-#### Main form
+#### Main Form
 ![Memory-Scanner-Sample-1](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/e664a7b6-78da-4896-8e5a-22eb6a91aa5a)
 
-#### Change address form
-![Memory-Scanner-Sample-3](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/201fa3da-970e-42fc-9b87-4475acdd6d1b)
+#### Add Address Form
+![Add Address Form](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/fa09b661-8d05-4f1a-85e9-b26aaf14e84d)
+
 
 ## Memory read functions
 These functions read memory values using the ```ReadProcessMemory``` function from the Windows API. They return the result as a
@@ -34,8 +35,7 @@ from an .exe, you must factor in the module base address. You must also pass in 
 
 All you need is the process ID, and the Windows header, which can be included by using the ```#include <Windows.h>``` preprocessor directive.
 For the string value function, you can modify ```MAX_STRING_LENGTH``` to your desired string length. The extra byte added to the string
-size is to account for the null terminator. For a failed read, you can pull the error code by using ```GetLastError()```, which returns
-a numeric error code.
+size is to account for the null terminator. For a failed read, you can use ```GetLastError()```, to get the numeric error code.
 
 #### Byte value
 ```
