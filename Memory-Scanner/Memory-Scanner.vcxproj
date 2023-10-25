@@ -205,6 +205,10 @@
   <ItemGroup>
     <Image Include="Resources\Memory-Scanner-icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Win32\Release\Memory-Scanner.exe" />
+    <None Include="x64\Release\Memory-Scanner.exe" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

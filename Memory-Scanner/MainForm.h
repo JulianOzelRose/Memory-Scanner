@@ -1806,7 +1806,7 @@ namespace MemoryScanner {
 		frmAboutForm->ShowDialog();
 	}
 	private: System::Void tsmiViewREADME_Click(System::Object^ sender, System::EventArgs^ e) {
-		System::Diagnostics::Process::Start("https://github.com/JulianOzelRose");
+		System::Diagnostics::Process::Start("https://github.com/JulianOzelRose/Memory-Scanner/blob/master/README.md");
 	}
 	private: System::Void cbValueType_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 		// Change scan options for Text

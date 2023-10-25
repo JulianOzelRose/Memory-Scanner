@@ -70,4 +70,10 @@
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Win32\Release\Memory-Scanner.exe">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="x64\Release\Memory-Scanner.exe" />
+  </ItemGroup>
 </Project>
