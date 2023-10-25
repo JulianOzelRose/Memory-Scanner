@@ -98,7 +98,7 @@ String^ ReadUInt64FromMemory(HANDLE hProcess, BYTE* cbAddress)
 
 #### String value
 ```
-String^ ReadStringFromMemory(BYTE* cbAddress)
+String^ ReadStringFromMemory(HANDLE hProcess, BYTE* cbAddress)
 {
 	const int MAX_STRING_LENGTH = 32;
 	array<BYTE>^ cbBufferArray = gcnew array<BYTE>(MAX_STRING_LENGTH);
@@ -138,7 +138,7 @@ a CLI-based application.
 
 #### Byte value
 ```
-void WriteByteToMemory(HANDLE hProc, BYTE* cbAddress, BYTE bValue)
+void WriteByteToMemory(HANDLE hProcess, BYTE* cbAddress, BYTE bValue)
 {
 	if (!WriteProcessMemory(hProcess, (BYTE*)cbAddress, &bValue, sizeof(bValue), NULL))
 	{
@@ -150,7 +150,7 @@ void WriteByteToMemory(HANDLE hProc, BYTE* cbAddress, BYTE bValue)
 
 #### 2-byte value
 ```
-void WriteUInt16ToMemory(HANDLE hProc, BYTE* cbAddress, uint16_t u16Value)
+void WriteUInt16ToMemory(HANDLE hProcess, BYTE* cbAddress, uint16_t u16Value)
 {
 	if (!WriteProcessMemory(hProcess, (BYTE*)cbAddress, &u16Value, sizeof(u16Value), NULL))
 	{
@@ -162,7 +162,7 @@ void WriteUInt16ToMemory(HANDLE hProc, BYTE* cbAddress, uint16_t u16Value)
 
 #### 4-byte value
 ```
-void WriteDWORDToMemory(HANDLE hProc, BYTE* cbAddress, DWORD dwValue)
+void WriteDWORDToMemory(HANDLE hProcess, BYTE* cbAddress, DWORD dwValue)
 {
 	if (!WriteProcessMemory(hProcess, (BYTE*)cbAddress, &dwValue, sizeof(dwValue), NULL))
 	{
@@ -174,7 +174,7 @@ void WriteDWORDToMemory(HANDLE hProc, BYTE* cbAddress, DWORD dwValue)
 
 #### 8-byte value
 ```
-void WriteUInt64ToMemory(HANDLE hProc, BYTE* cbAddress, uint64_t u64Value)
+void WriteUInt64ToMemory(HANDLE hProcess, BYTE* cbAddress, uint64_t u64Value)
 {
 	if (!WriteProcessMemory(hProcess, (BYTE*)cbAddress, &u64Value, sizeof(u64Value), NULL))
 	{
@@ -186,7 +186,7 @@ void WriteUInt64ToMemory(HANDLE hProc, BYTE* cbAddress, uint64_t u64Value)
 
 #### String value
 ```
-void WriteStringToMemory(HANDLE hProc, BYTE* cbAddress, const char* cNewString)
+void WriteStringToMemory(HANDLE hProcess, BYTE* cbAddress, const char* cNewString)
 {
 	// Calculate the size of the string, including the null terminator
 	size_t uDataSize = strlen(cNewString) + 1;
