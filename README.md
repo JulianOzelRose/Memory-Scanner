@@ -19,9 +19,10 @@ privileges -- which is required for the memory scanning functions to work proper
 - Windows API
 
 ## Program screenshots
-#### UI after search completed
-![Memory-Scanner-Sample-1](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/3254909a-fd89-4472-a5af-a9123c2d19c4)
-#### UI when changing an address
+#### Main form
+![Memory-Scanner-Sample-1](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/e664a7b6-78da-4896-8e5a-22eb6a91aa5a)
+
+#### Change address form
 ![Memory-Scanner-Sample-3](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/201fa3da-970e-42fc-9b87-4475acdd6d1b)
 
 ## Memory read functions
