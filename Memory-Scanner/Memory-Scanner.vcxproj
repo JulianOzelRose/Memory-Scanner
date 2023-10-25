@@ -145,11 +145,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AboutForm.cpp" />
     <ClCompile Include="MainForm.cpp" />
-    <ClCompile Include="NewDescriptionForm.cpp" />
-    <ClCompile Include="NewValueForm.cpp" />
-    <ClCompile Include="ProcessListForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AboutForm.h">
