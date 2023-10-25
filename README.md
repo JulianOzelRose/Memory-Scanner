@@ -20,14 +20,14 @@ privileges -- which is required for the memory scanning functions to work proper
 
 ## Program screenshots
 #### Main Form
-![Memory-Scanner-Sample-1](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/e664a7b6-78da-4896-8e5a-22eb6a91aa5a)
+![MainForm](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/e890ac7e-fb42-4c14-b63a-51287fad645b)
 
 #### Add Address Form
-![Add Address Form](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/fa09b661-8d05-4f1a-85e9-b26aaf14e84d)
+![AddAddressForm](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/73e426b7-e484-47f3-86c0-0502f04979e1)
 
 
 ## Memory read functions
-These functions read memory values using the ```ReadProcessMemory``` function from the Windows API. They return the result as a
+These functions read memory values using the ```ReadProcessMemory()``` function from the Windows API. They return the result as a
 managed string, but this can easily be changed to return as a number type. A couple things to note is that when reading memory
 from an .exe, you must factor in the module base address. You must also pass in the process handle, which can be done with:<br>
 
@@ -52,7 +52,7 @@ String^ ReadByteFromMemory(HANDLE hProcess, BYTE* cbAddress)
 }
 ```
 
-#### 2-byte value
+#### 2-Byte value
 ```
 String^ ReadUInt16FromMemory(HANDLE hProcess, BYTE* cbAddress)
 {
@@ -67,7 +67,7 @@ String^ ReadUInt16FromMemory(HANDLE hProcess, BYTE* cbAddress)
 }
 ```
 
-#### 4-byte value
+#### 4-Byte value
 ```
 String^ ReadDWORDFromMemory(HANDLE hProcess, BYTE* cbAddress)
 {
@@ -82,7 +82,7 @@ String^ ReadDWORDFromMemory(HANDLE hProcess, BYTE* cbAddress)
 }
 ```
 
-#### 8-byte value
+#### 8-Byte value
 ```
 String^ ReadUInt64FromMemory(HANDLE hProcess, BYTE* cbAddress)
 {
@@ -126,7 +126,7 @@ String^ ReadStringFromMemory(HANDLE hProcess, BYTE* cbAddress)
 ```
 
 ## Memory write functions
-These functions write to memory using the ```WriteProcessMemory``` function from the Windows API. Similar to
+These functions write to memory using the ```WriteProcessMemory()``` function from the Windows API. Similar to
 the read functions, you must also declare the process handle in order to pass it into the function.
 However, for writing to strings, the declaration is slightly different:<br>
 
@@ -149,7 +149,7 @@ void WriteByteToMemory(HANDLE hProcess, BYTE* cbAddress, BYTE bValue)
 }
 ```
 
-#### 2-byte value
+#### 2-Byte value
 ```
 void WriteUInt16ToMemory(HANDLE hProcess, BYTE* cbAddress, uint16_t u16Value)
 {
@@ -161,7 +161,7 @@ void WriteUInt16ToMemory(HANDLE hProcess, BYTE* cbAddress, uint16_t u16Value)
 }
 ```
 
-#### 4-byte value
+#### 4-Byte value
 ```
 void WriteDWORDToMemory(HANDLE hProcess, BYTE* cbAddress, DWORD dwValue)
 {
@@ -173,7 +173,7 @@ void WriteDWORDToMemory(HANDLE hProcess, BYTE* cbAddress, DWORD dwValue)
 }
 ```
 
-#### 8-byte value
+#### 8-Byte value
 ```
 void WriteUInt64ToMemory(HANDLE hProcess, BYTE* cbAddress, uint64_t u64Value)
 {
