@@ -320,7 +320,7 @@ namespace MemoryScanner {
 			// 
 			this->txtDescription->Location = System::Drawing::Point(9, 94);
 			this->txtDescription->Name = L"txtDescription";
-			this->txtDescription->Size = System::Drawing::Size(255, 20);
+			this->txtDescription->Size = System::Drawing::Size(324, 20);
 			this->txtDescription->TabIndex = 4;
 			this->txtDescription->Text = L"No description";
 			this->txtDescription->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &AddAddressForm::txtDescription_KeyDown);
@@ -341,7 +341,7 @@ namespace MemoryScanner {
 			// 
 			// btnCancel
 			// 
-			this->btnCancel->Location = System::Drawing::Point(319, 188);
+			this->btnCancel->Location = System::Drawing::Point(258, 188);
 			this->btnCancel->Name = L"btnCancel";
 			this->btnCancel->Size = System::Drawing::Size(75, 23);
 			this->btnCancel->TabIndex = 6;
@@ -351,7 +351,7 @@ namespace MemoryScanner {
 			// 
 			// btnOK
 			// 
-			this->btnOK->Location = System::Drawing::Point(238, 188);
+			this->btnOK->Location = System::Drawing::Point(177, 188);
 			this->btnOK->Name = L"btnOK";
 			this->btnOK->Size = System::Drawing::Size(75, 23);
 			this->btnOK->TabIndex = 7;
@@ -362,7 +362,7 @@ namespace MemoryScanner {
 			// lblValue
 			// 
 			this->lblValue->AutoSize = true;
-			this->lblValue->Location = System::Drawing::Point(183, 28);
+			this->lblValue->Location = System::Drawing::Point(180, 28);
 			this->lblValue->Name = L"lblValue";
 			this->lblValue->Size = System::Drawing::Size(34, 13);
 			this->lblValue->TabIndex = 8;
@@ -385,7 +385,7 @@ namespace MemoryScanner {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(406, 223);
+			this->ClientSize = System::Drawing::Size(345, 223);
 			this->Controls->Add(this->chkAddModuleBaseAddress);
 			this->Controls->Add(this->lblValue);
 			this->Controls->Add(this->btnOK);

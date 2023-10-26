@@ -45,6 +45,8 @@ namespace MemoryScanner {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dgvMemoryAddressValue;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dgvMemoryAddressPrevious;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dgvMemoryAddressFirst;
+	private: System::Windows::Forms::Label^ lblStop;
+	private: System::Windows::Forms::Label^ lblStart;
 
 
 
@@ -995,6 +997,8 @@ namespace MemoryScanner {
 			this->chkNot = (gcnew System::Windows::Forms::CheckBox());
 			this->tmrUpdateValues = (gcnew System::Windows::Forms::Timer(this->components));
 			this->btnAddAddressManually = (gcnew System::Windows::Forms::Button());
+			this->lblStart = (gcnew System::Windows::Forms::Label());
+			this->lblStop = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvMemoryAddress))->BeginInit();
 			this->cmsMemoryAddress->SuspendLayout();
 			this->toolStripMain->SuspendLayout();
@@ -1257,6 +1261,8 @@ namespace MemoryScanner {
 			// 
 			// grpMemoryScanOptions
 			// 
+			this->grpMemoryScanOptions->Controls->Add(this->lblStop);
+			this->grpMemoryScanOptions->Controls->Add(this->lblStart);
 			this->grpMemoryScanOptions->Controls->Add(this->chkWritable);
 			this->grpMemoryScanOptions->Controls->Add(this->txtAddressStop);
 			this->grpMemoryScanOptions->Controls->Add(this->txtAddressStart);
@@ -1282,7 +1288,7 @@ namespace MemoryScanner {
 			// 
 			// txtAddressStop
 			// 
-			this->txtAddressStop->Location = System::Drawing::Point(45, 72);
+			this->txtAddressStop->Location = System::Drawing::Point(44, 72);
 			this->txtAddressStop->Name = L"txtAddressStop";
 			this->txtAddressStop->Size = System::Drawing::Size(161, 20);
 			this->txtAddressStop->TabIndex = 13;
@@ -1290,7 +1296,7 @@ namespace MemoryScanner {
 			// 
 			// txtAddressStart
 			// 
-			this->txtAddressStart->Location = System::Drawing::Point(45, 46);
+			this->txtAddressStart->Location = System::Drawing::Point(44, 46);
 			this->txtAddressStart->Name = L"txtAddressStart";
 			this->txtAddressStart->Size = System::Drawing::Size(161, 20);
 			this->txtAddressStart->TabIndex = 12;
@@ -1301,9 +1307,9 @@ namespace MemoryScanner {
 			this->cbScanOptions->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->cbScanOptions->FormattingEnabled = true;
 			this->cbScanOptions->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"All" });
-			this->cbScanOptions->Location = System::Drawing::Point(6, 19);
+			this->cbScanOptions->Location = System::Drawing::Point(9, 19);
 			this->cbScanOptions->Name = L"cbScanOptions";
-			this->cbScanOptions->Size = System::Drawing::Size(200, 21);
+			this->cbScanOptions->Size = System::Drawing::Size(196, 21);
 			this->cbScanOptions->TabIndex = 11;
 			// 
 			// dgvAddressList
@@ -1479,6 +1485,24 @@ namespace MemoryScanner {
 			this->btnAddAddressManually->Text = L"Add address manually";
 			this->btnAddAddressManually->UseVisualStyleBackColor = true;
 			this->btnAddAddressManually->Click += gcnew System::EventHandler(this, &MainForm::btnAddAddressManually_Click);
+			// 
+			// lblStart
+			// 
+			this->lblStart->AutoSize = true;
+			this->lblStart->Location = System::Drawing::Point(9, 46);
+			this->lblStart->Name = L"lblStart";
+			this->lblStart->Size = System::Drawing::Size(29, 13);
+			this->lblStart->TabIndex = 16;
+			this->lblStart->Text = L"Start";
+			// 
+			// lblStop
+			// 
+			this->lblStop->AutoSize = true;
+			this->lblStop->Location = System::Drawing::Point(9, 75);
+			this->lblStop->Name = L"lblStop";
+			this->lblStop->Size = System::Drawing::Size(29, 13);
+			this->lblStop->TabIndex = 17;
+			this->lblStop->Text = L"Stop";
 			// 
 			// MainForm
 			// 
