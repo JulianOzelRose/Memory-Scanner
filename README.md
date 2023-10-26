@@ -37,7 +37,7 @@ All you need is the process ID, and the Windows header, which can be included by
 For the string value function, you can modify ```MAX_STRING_LENGTH``` to your desired string length. The extra byte added to the string
 size is to account for the null terminator. For a failed read, you can use ```GetLastError()```, to get the numeric error code.
 
-#### Byte value
+#### Read BYTE value
 ```
 String^ ReadByteFromMemory(HANDLE hProcess, BYTE* cbAddress)
 {
@@ -52,7 +52,7 @@ String^ ReadByteFromMemory(HANDLE hProcess, BYTE* cbAddress)
 }
 ```
 
-#### 2-Byte value
+#### Read 2-byte value
 ```
 String^ ReadUInt16FromMemory(HANDLE hProcess, BYTE* cbAddress)
 {
@@ -67,7 +67,7 @@ String^ ReadUInt16FromMemory(HANDLE hProcess, BYTE* cbAddress)
 }
 ```
 
-#### 4-Byte value
+#### Read 4-byte value
 ```
 String^ ReadDWORDFromMemory(HANDLE hProcess, BYTE* cbAddress)
 {
@@ -82,7 +82,7 @@ String^ ReadDWORDFromMemory(HANDLE hProcess, BYTE* cbAddress)
 }
 ```
 
-#### 8-Byte value
+#### Read 8-byte value
 ```
 String^ ReadUInt64FromMemory(HANDLE hProcess, BYTE* cbAddress)
 {
@@ -97,11 +97,12 @@ String^ ReadUInt64FromMemory(HANDLE hProcess, BYTE* cbAddress)
 }
 ```
 
-#### String value
+#### Read string value
 ```
 String^ ReadStringFromMemory(HANDLE hProcess, BYTE* cbAddress)
 {
 	const int MAX_STRING_LENGTH = 32;
+
 	array<BYTE>^ cbBufferArray = gcnew array<BYTE>(MAX_STRING_LENGTH);
 	pin_ptr<BYTE> cbptrBuffer = &cbBufferArray[0];
 
@@ -137,7 +138,7 @@ change the encoding from UTF-8 to UTF-16. Since these functions are written for 
 write will launch a message box that will specify the error code. This format can be easily changed to work on
 a CLI-based application.
 
-#### Byte value
+#### Write BYTE value
 ```
 void WriteByteToMemory(HANDLE hProcess, BYTE* cbAddress, BYTE bValue)
 {
@@ -149,7 +150,7 @@ void WriteByteToMemory(HANDLE hProcess, BYTE* cbAddress, BYTE bValue)
 }
 ```
 
-#### 2-Byte value
+#### Write 2-byte value
 ```
 void WriteUInt16ToMemory(HANDLE hProcess, BYTE* cbAddress, uint16_t u16Value)
 {
@@ -161,7 +162,7 @@ void WriteUInt16ToMemory(HANDLE hProcess, BYTE* cbAddress, uint16_t u16Value)
 }
 ```
 
-#### 4-Byte value
+#### Write 4-byte value
 ```
 void WriteDWORDToMemory(HANDLE hProcess, BYTE* cbAddress, DWORD dwValue)
 {
@@ -173,7 +174,7 @@ void WriteDWORDToMemory(HANDLE hProcess, BYTE* cbAddress, DWORD dwValue)
 }
 ```
 
-#### 8-Byte value
+#### Write 8-byte value
 ```
 void WriteUInt64ToMemory(HANDLE hProcess, BYTE* cbAddress, uint64_t u64Value)
 {
@@ -185,7 +186,7 @@ void WriteUInt64ToMemory(HANDLE hProcess, BYTE* cbAddress, uint64_t u64Value)
 }
 ```
 
-#### String value
+#### Write string value
 ```
 void WriteStringToMemory(HANDLE hProcess, BYTE* cbAddress, const char* cNewString)
 {
@@ -207,3 +208,4 @@ void WriteStringToMemory(HANDLE hProcess, BYTE* cbAddress, const char* cNewStrin
 - [Microsoft Learn - EnumProcessModules function (psapi.h)](https://learn.microsoft.com/en-us/windows/win32/api/psapi/nf-psapi-enumprocessmodules)
 - [Microsoft Learn - Process Security and Access Rights](https://learn.microsoft.com/en-us/windows/win32/procthread/process-security-and-access-rights)
 - [Microsoft Learn - GetLastError function (errhandlingapi.h)](https://learn.microsoft.com/en-us/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror)
+- [Guided Hacking - How to WriteProcessMemory to a std::String](https://guidedhacking.com/threads/how-to-writeprocessmemory-to-a-std-string.14851/)
