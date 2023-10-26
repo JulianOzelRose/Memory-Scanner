@@ -20,11 +20,10 @@ privileges -- which is required for the memory scanning functions to work proper
 
 ## Program screenshots
 #### Main Form
-![MainForm](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/23bbf867-8a53-4649-b5fb-ea2dfa83f93d)
+![MainForm](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/9ca339d8-c780-4064-a6b6-a9694483c8f0)
 
 #### Add Address Form
-![AddAddressForm](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/a43902a4-ed1d-43ce-8821-298d54e946c9)
-
+![AddAddressForm](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/43792e45-4fe5-4455-8e1d-4dd393bd27cf)
 
 ## Read memory functions
 These functions read memory values using the ```ReadProcessMemory()``` function from the Windows API. They return the result as a
