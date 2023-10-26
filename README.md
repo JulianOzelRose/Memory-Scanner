@@ -20,13 +20,13 @@ privileges -- which is required for the memory scanning functions to work proper
 
 ## Program screenshots
 #### Main Form
-![MainForm](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/e890ac7e-fb42-4c14-b63a-51287fad645b)
+![MainForm](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/23bbf867-8a53-4649-b5fb-ea2dfa83f93d)
 
 #### Add Address Form
-![AddAddressForm](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/73e426b7-e484-47f3-86c0-0502f04979e1)
+![AddAddressForm](https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/a43902a4-ed1d-43ce-8821-298d54e946c9)
 
 
-## Memory read functions
+## Read memory functions
 These functions read memory values using the ```ReadProcessMemory()``` function from the Windows API. They return the result as a
 managed string, but this can easily be changed to return as a number type. A couple things to note is that when reading memory
 from an .exe, you must factor in the module base address. You must also pass in the process handle, which can be done with:<br>
@@ -125,7 +125,7 @@ String^ ReadStringFromMemory(HANDLE hProcess, BYTE* cbAddress)
 }
 ```
 
-## Memory write functions
+## Write memory functions
 These functions write to memory using the ```WriteProcessMemory()``` function from the Windows API. Similar to
 the read functions, you must also declare the process handle in order to pass it into the function.
 However, for writing to strings, the declaration is slightly different:<br>
