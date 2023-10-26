@@ -945,6 +945,10 @@ namespace MemoryScanner {
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MainForm::typeid));
 			this->dgvMemoryAddress = (gcnew System::Windows::Forms::DataGridView());
+			this->dgvMemoryAddressAddress = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dgvMemoryAddressValue = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dgvMemoryAddressPrevious = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dgvMemoryAddressFirst = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->cmsMemoryAddress = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
 			this->tsmiAddToAddressList = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->tsmiChangeValueOfSelectedAddresses = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -991,10 +995,6 @@ namespace MemoryScanner {
 			this->chkNot = (gcnew System::Windows::Forms::CheckBox());
 			this->tmrUpdateValues = (gcnew System::Windows::Forms::Timer(this->components));
 			this->btnAddAddressManually = (gcnew System::Windows::Forms::Button());
-			this->dgvMemoryAddressAddress = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dgvMemoryAddressValue = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dgvMemoryAddressPrevious = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dgvMemoryAddressFirst = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvMemoryAddress))->BeginInit();
 			this->cmsMemoryAddress->SuspendLayout();
 			this->toolStripMain->SuspendLayout();
@@ -1026,6 +1026,38 @@ namespace MemoryScanner {
 			this->dgvMemoryAddress->RowsAdded += gcnew System::Windows::Forms::DataGridViewRowsAddedEventHandler(this, &MainForm::dgvMemoryAddress_RowsAdded);
 			this->dgvMemoryAddress->RowsRemoved += gcnew System::Windows::Forms::DataGridViewRowsRemovedEventHandler(this, &MainForm::dgvMemoryAddress_RowsRemoved);
 			this->dgvMemoryAddress->UserDeletingRow += gcnew System::Windows::Forms::DataGridViewRowCancelEventHandler(this, &MainForm::dgvMemoryAddress_UserDeletingRow);
+			// 
+			// dgvMemoryAddressAddress
+			// 
+			this->dgvMemoryAddressAddress->HeaderText = L"Address";
+			this->dgvMemoryAddressAddress->Name = L"dgvMemoryAddressAddress";
+			this->dgvMemoryAddressAddress->ReadOnly = true;
+			this->dgvMemoryAddressAddress->Resizable = System::Windows::Forms::DataGridViewTriState::False;
+			this->dgvMemoryAddressAddress->Width = 316;
+			// 
+			// dgvMemoryAddressValue
+			// 
+			this->dgvMemoryAddressValue->HeaderText = L"Value";
+			this->dgvMemoryAddressValue->Name = L"dgvMemoryAddressValue";
+			this->dgvMemoryAddressValue->ReadOnly = true;
+			this->dgvMemoryAddressValue->Resizable = System::Windows::Forms::DataGridViewTriState::False;
+			this->dgvMemoryAddressValue->Width = 110;
+			// 
+			// dgvMemoryAddressPrevious
+			// 
+			this->dgvMemoryAddressPrevious->HeaderText = L"Previous";
+			this->dgvMemoryAddressPrevious->Name = L"dgvMemoryAddressPrevious";
+			this->dgvMemoryAddressPrevious->ReadOnly = true;
+			this->dgvMemoryAddressPrevious->Resizable = System::Windows::Forms::DataGridViewTriState::False;
+			this->dgvMemoryAddressPrevious->Width = 110;
+			// 
+			// dgvMemoryAddressFirst
+			// 
+			this->dgvMemoryAddressFirst->HeaderText = L"First";
+			this->dgvMemoryAddressFirst->Name = L"dgvMemoryAddressFirst";
+			this->dgvMemoryAddressFirst->ReadOnly = true;
+			this->dgvMemoryAddressFirst->Resizable = System::Windows::Forms::DataGridViewTriState::False;
+			this->dgvMemoryAddressFirst->Width = 110;
 			// 
 			// cmsMemoryAddress
 			// 
@@ -1448,38 +1480,6 @@ namespace MemoryScanner {
 			this->btnAddAddressManually->UseVisualStyleBackColor = true;
 			this->btnAddAddressManually->Click += gcnew System::EventHandler(this, &MainForm::btnAddAddressManually_Click);
 			// 
-			// dgvMemoryAddressAddress
-			// 
-			this->dgvMemoryAddressAddress->HeaderText = L"Address";
-			this->dgvMemoryAddressAddress->Name = L"dgvMemoryAddressAddress";
-			this->dgvMemoryAddressAddress->ReadOnly = true;
-			this->dgvMemoryAddressAddress->Resizable = System::Windows::Forms::DataGridViewTriState::False;
-			this->dgvMemoryAddressAddress->Width = 316;
-			// 
-			// dgvMemoryAddressValue
-			// 
-			this->dgvMemoryAddressValue->HeaderText = L"Value";
-			this->dgvMemoryAddressValue->Name = L"dgvMemoryAddressValue";
-			this->dgvMemoryAddressValue->ReadOnly = true;
-			this->dgvMemoryAddressValue->Resizable = System::Windows::Forms::DataGridViewTriState::False;
-			this->dgvMemoryAddressValue->Width = 110;
-			// 
-			// dgvMemoryAddressPrevious
-			// 
-			this->dgvMemoryAddressPrevious->HeaderText = L"Previous";
-			this->dgvMemoryAddressPrevious->Name = L"dgvMemoryAddressPrevious";
-			this->dgvMemoryAddressPrevious->ReadOnly = true;
-			this->dgvMemoryAddressPrevious->Resizable = System::Windows::Forms::DataGridViewTriState::False;
-			this->dgvMemoryAddressPrevious->Width = 110;
-			// 
-			// dgvMemoryAddressFirst
-			// 
-			this->dgvMemoryAddressFirst->HeaderText = L"First";
-			this->dgvMemoryAddressFirst->Name = L"dgvMemoryAddressFirst";
-			this->dgvMemoryAddressFirst->ReadOnly = true;
-			this->dgvMemoryAddressFirst->Resizable = System::Windows::Forms::DataGridViewTriState::False;
-			this->dgvMemoryAddressFirst->Width = 110;
-			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1508,6 +1508,7 @@ namespace MemoryScanner {
 			this->Name = L"MainForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Memory Scanner";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &MainForm::MainForm_FormClosing);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvMemoryAddress))->EndInit();
 			this->cmsMemoryAddress->ResumeLayout(false);
 			this->toolStripMain->ResumeLayout(false);
@@ -1922,6 +1923,12 @@ namespace MemoryScanner {
 	}
 	private: System::Void dgvMemoryAddress_UserDeletingRow(System::Object^ sender, System::Windows::Forms::DataGridViewRowCancelEventArgs^ e) {
 		e->Cancel = true;
+	}
+	private: System::Void MainForm_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
+		if (hProcess != nullptr)
+		{
+			CloseHandle(hProcess);
+		}
 	}
 	};
 }
