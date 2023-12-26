@@ -51,7 +51,7 @@ String^ ReadByteFromMemory(HANDLE hProcess, BYTE* cbAddress)
 }
 ```
 
-#### Read 2-byte value
+#### Read UInt16 value
 ```
 String^ ReadUInt16FromMemory(HANDLE hProcess, BYTE* cbAddress)
 {
@@ -66,7 +66,7 @@ String^ ReadUInt16FromMemory(HANDLE hProcess, BYTE* cbAddress)
 }
 ```
 
-#### Read 4-byte value
+#### Read DWORD value
 ```
 String^ ReadDWORDFromMemory(HANDLE hProcess, BYTE* cbAddress)
 {
@@ -81,7 +81,7 @@ String^ ReadDWORDFromMemory(HANDLE hProcess, BYTE* cbAddress)
 }
 ```
 
-#### Read 8-byte value
+#### Read UInt64 value
 ```
 String^ ReadUInt64FromMemory(HANDLE hProcess, BYTE* cbAddress)
 {
@@ -96,7 +96,7 @@ String^ ReadUInt64FromMemory(HANDLE hProcess, BYTE* cbAddress)
 }
 ```
 
-#### Read string value
+#### Read String value
 ```
 String^ ReadStringFromMemory(HANDLE hProcess, BYTE* cbAddress)
 {
@@ -144,48 +144,56 @@ void WriteByteToMemory(HANDLE hProcess, BYTE* cbAddress, BYTE bValue)
 	if (!WriteProcessMemory(hProcess, (BYTE*)cbAddress, &bValue, sizeof(bValue), NULL))
 	{
 		DWORD dwError = GetLastError();
-		MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "ERROR");
+
+		MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "Error",
+			MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 }
 ```
 
-#### Write 2-byte value
+#### Write UInt16 value
 ```
 void WriteUInt16ToMemory(HANDLE hProcess, BYTE* cbAddress, uint16_t u16Value)
 {
 	if (!WriteProcessMemory(hProcess, (BYTE*)cbAddress, &u16Value, sizeof(u16Value), NULL))
 	{
 		DWORD dwError = GetLastError();
-		MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "ERROR");
+
+		MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "Error",
+			MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 }
 ```
 
-#### Write 4-byte value
+#### Write DWORD value
 ```
 void WriteDWORDToMemory(HANDLE hProcess, BYTE* cbAddress, DWORD dwValue)
 {
 	if (!WriteProcessMemory(hProcess, (BYTE*)cbAddress, &dwValue, sizeof(dwValue), NULL))
 	{
 		DWORD dwError = GetLastError();
-		MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "ERROR");
+
+		MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "Error",
+			MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 }
 ```
 
-#### Write 8-byte value
+#### Write UInt64 value
 ```
 void WriteUInt64ToMemory(HANDLE hProcess, BYTE* cbAddress, uint64_t u64Value)
 {
 	if (!WriteProcessMemory(hProcess, (BYTE*)cbAddress, &u64Value, sizeof(u64Value), NULL))
 	{
 		DWORD dwError = GetLastError();
-		MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "ERROR");
+
+		MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "Error",
+			MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 }
 ```
 
-#### Write string value
+#### Write String value
 ```
 void WriteStringToMemory(HANDLE hProcess, BYTE* cbAddress, const char* cNewString)
 {
@@ -195,7 +203,9 @@ void WriteStringToMemory(HANDLE hProcess, BYTE* cbAddress, const char* cNewStrin
 	if (!WriteProcessMemory(hProcess, (LPVOID)cbAddress, cNewString, uDataSize, 0))
 	{
 		DWORD dwError = GetLastError();
-		MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "ERROR");
+
+		MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "Error",
+			MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 }
 ```
