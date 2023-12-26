@@ -1595,7 +1595,7 @@ namespace MemoryScanner {
 	private: System::Void btnFirstScan_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (txtValue->Text == "")
 		{
-			MessageBox::Show("Please enter a value.", "ERROR");
+			MessageBox::Show("Please enter a value.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		else
 		{
@@ -1611,7 +1611,7 @@ namespace MemoryScanner {
 			}
 			else
 			{
-				MessageBox::Show("Can't parse memory addresses", "ERROR");
+				MessageBox::Show("Can't parse memory addresses", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 				return;
 			}
 
@@ -1627,7 +1627,7 @@ namespace MemoryScanner {
 				if (!System::UInt64::TryParse(txtValue->Text, u64SearchQuery))
 				{
 					// Handle invalid query input
-					MessageBox::Show("Invalid entry.", "ERROR");
+					MessageBox::Show("Invalid entry.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 					return;
 				}
 

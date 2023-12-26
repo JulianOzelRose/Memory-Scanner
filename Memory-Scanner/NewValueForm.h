@@ -61,7 +61,7 @@ namespace MemoryScanner {
 				}
 				else
 				{
-					MessageBox::Show("Unable to parse value", "ERROR");
+					MessageBox::Show("Unable to parse value", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 				}
 			}
 			else if (iDataType == 4)
@@ -84,7 +84,9 @@ namespace MemoryScanner {
 			if (!WriteProcessMemory(hProcess, (BYTE*)cbAddress, &bValue, sizeof(bValue), NULL))
 			{
 				DWORD dwError = GetLastError();
-				MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "ERROR");
+
+				MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "Error",
+					MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 		}
 
@@ -93,7 +95,9 @@ namespace MemoryScanner {
 			if (!WriteProcessMemory(hProcess, (BYTE*)cbAddress, &u16Value, sizeof(u16Value), NULL))
 			{
 				DWORD dwError = GetLastError();
-				MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "ERROR");
+
+				MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "Error",
+					MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 		}
 
@@ -102,7 +106,9 @@ namespace MemoryScanner {
 			if (!WriteProcessMemory(hProcess, (BYTE*)cbAddress, &dwValue, sizeof(dwValue), NULL))
 			{
 				DWORD dwError = GetLastError();
-				MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "ERROR");
+
+				MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "Error",
+					MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 		}
 
@@ -111,7 +117,9 @@ namespace MemoryScanner {
 			if (!WriteProcessMemory(hProcess, (BYTE*)cbAddress, &u64Value, sizeof(u64Value), NULL))
 			{
 				DWORD dwError = GetLastError();
-				MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "ERROR");
+
+				MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "Error",
+					MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 		}
 
@@ -123,7 +131,9 @@ namespace MemoryScanner {
 			if (!WriteProcessMemory(hProcess, (LPVOID)cbAddress, cNewString, uDataSize, 0))
 			{
 				DWORD dwError = GetLastError();
-				MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "ERROR");
+
+				MessageBox::Show("Failed to write to address, error code: " + dwError.ToString(), "Error",
+					MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 		}
 
