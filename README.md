@@ -19,7 +19,7 @@ privileges -- which is required for the memory scanning functions to work proper
 - Windows API
 
 ## Video demonstration
-https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/31ee86d4-9913-4e12-b243-4c5305a3b7ac
+https://github.com/JulianOzelRose/Memory-Scanner/assets/95890436/3304ee00-d991-4260-ab40-2bda2ee553f1
 
 
 ## Read memory functions
